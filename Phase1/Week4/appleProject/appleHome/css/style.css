@@ -5,7 +5,6 @@
 }
 body {
   font-family: "Montserrat", sans-serif;
-  /* background-color: #fafafa; */
 }
 img {
   max-width: 100%;
@@ -30,7 +29,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  list-style: none;
 }
 
 .header-link-wrapper ul li a {
@@ -292,12 +290,23 @@ a {
 .policy-wrapper ul {
   display: flex;
 }
-.policy-wrapper ul li a {
-  font-size: 12px;
-  padding: 0 5px;
-  color: #515154;
-  border-right: 1px solid #8b8b8b;
+.policy-wrapper ul li a{
+   color: #515154;
 }
+.policy-wrapper ul li{
+    color: #515154;
+  border-right: 1px solid #8b8b8b;
+  padding: 0 5px;
+  
+}
+.policy-wrapper ul li{
+  font-size: 12px;
+  
+}
+.policy-wrapper ul li:last-child{
+  border-right: none;
+}
+
 .policy-wrapper ul li a:hover {
   text-decoration: underline;
 }
