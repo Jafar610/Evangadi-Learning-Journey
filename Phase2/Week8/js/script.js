@@ -45,9 +45,23 @@ let c = a + b;
 console.log(c);
 
 //Q4
-
 let firstName = "Jafar";
 let lastName = "Mohamed";
 let fullName = firstName + " " + lastName;
 
 console.log(fullName);
+
+
+
+// Arrays 
+const personalInfo = ['Jafar', 24, 'male'];
+const fname = "Mohamed";
+
+personalInfo.push('Mohamed');
+console.log(personalInfo);
+personalInfo.reverse();
+
+personalInfo.unshift('Yenewa');
+console.log(personalInfo);
+
+
