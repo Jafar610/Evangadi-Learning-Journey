@@ -64,4 +64,10 @@ personalInfo.reverse();
 personalInfo.unshift('Yenewa');
 console.log(personalInfo);
 
+personalInfo.pop();
+console.log(personalInfo);
+
+personalInfo.shift();
+console.log(personalInfo);
+
 
