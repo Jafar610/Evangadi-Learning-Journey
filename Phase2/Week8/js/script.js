@@ -178,3 +178,33 @@ const bigCities = cities.filter((city) => city.population > 3_000_000)
 .map((c)=>c.name)
 .forEach((c)=>console.log(c));
 
+// The Array reduce() method iterate over an array and reduce their elements to a single value.
+// The reduce() method executes a function for each value in the array from left to right and store the return value of the function in a accumulator.
+
+const numReduce = [1,2,3];
+const reduceValue = numReduce.reduce((acc, cv)=> acc + cv);
+console.log(reduceValue);
+
+// additional example
+const cart = [
+  {
+    product: 'phone',
+    qty: 1,
+    price: 500,
+  },
+  {
+    product: 'Screen Protector',
+    qty: 1,
+    price: 10,
+  },
+  {
+    product: 'Memory Card',
+    qty: 2,
+    price: 20,
+  },
+];
+
+const reducer = (acc, item) => acc + item.qty * item.price;
+const total = cart.reduce(reducer, 0);
+
+console.log({ total });
