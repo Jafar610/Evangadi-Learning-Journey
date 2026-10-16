@@ -102,7 +102,7 @@ const newNum = num.slice(0, 3);
 console.log(newNum);
 
 
-// include() method.
+// includes() method.
 // includes() method to check if a number or other data is included in an array
 
 const student = ['abebe', 'gemechu' , 'chala'];
@@ -112,6 +112,7 @@ console.log(student.includes('abebe')); // true
 
 // find() method.
 //The find() method accepts a callback function that executes on every element of the array.
+// Use the find() method to find the first element in an array that satisfies a provided testing function.
 const oldNum = num.slice(0,5); // to use the above num value instead of creating a new array.
 
 const evenNum = oldNum.find((even)=> even % 2 == 0);
@@ -148,4 +149,32 @@ const search = ProgStudents.find((completed)=>completed.isCompleted == true);
 console.log(search);
 console.log(search.id);
 
+
+// map() method
+// The JavaScript Array map() method creates a new array that includes the results by applying a function to every element in the original array.
+
+const nn = [1,2,3];
+const result = nn.map((n)=> n*4);
+console.log(result);
+
+// filter() method
+// The filter() method creates a new array with elements from the original array, which passes a test function.
+
+const numb = [1,3,4,2,5,9];
+const res = numb.filter((n)=> n > 2);
+console.log(res);
+
+// additional example.
+
+const cities = [
+  { name: 'Los Angeles', population: 3_792_621 },
+  { name: 'New York', population: 8_175_133 },
+  { name: 'Chicago', population: 2_695_598 },
+  { name: 'Houston', population: 2_099_451 },
+  { name: 'Philadelphia', population: 1_526_006 },
+];
+
+const bigCities = cities.filter((city) => city.population > 3_000_000)
+.map((c)=>c.name)
+.forEach((c)=>console.log(c));
 
