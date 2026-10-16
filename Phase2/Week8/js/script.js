@@ -208,3 +208,27 @@ const reducer = (acc, item) => acc + item.qty * item.price;
 const total = cart.reduce(reducer, 0);
 
 console.log({ total });
+
+
+//every() method of array
+//The every() method that allows you to check if every element of an array passes a test provided by a function.
+
+const numbers = [1, 3, 5];
+const r = numbers.every((n) => n > 0);
+
+console.log({ r }); // true
+
+// example 2
+let numbers2 = [2, 4, 5];
+let result2 = numbers.every((n) => n % 2 == 0);
+
+console.log({ result2 }); // false
+
+// sort() method 
+// The sort() method allows you to sort elements of an array in place. It changes the positions of the elements in the original array and returns the sorted array.
+
+// By default, the sort() method sorts the array elements in ascending order, placing the smallest value first and the largest value last.
+
+let numbers3 = [0, 2, 5, 3, 10];
+numbers.sort();
+console.log(numbers3);
