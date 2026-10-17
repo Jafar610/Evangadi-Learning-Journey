@@ -232,3 +232,29 @@ console.log({ result2 }); // false
 let numbers3 = [0, 2, 5, 3, 10];
 numbers.sort();
 console.log(numbers3);
+
+
+// concat() of an array
+//The Array concat() method allows you to merge elements of two or more arrays into a single array.
+
+let odds = [1, 3, 5];
+let evens = [2, 4, 6];
+
+let results = odds.concat(evens);
+
+console.log({ results });
+
+
+// join() method of an array
+// The join() method allows you to concatenate all elements of an array and return a new string.
+
+const array = ['a', 'b', 'c'];
+const str = array.join('-');
+
+console.log({ str }); // { str: 'a-b-c' }
+
+// example 2
+const title = 'JavaScript array join example';
+const url = title.split(' ').join('-').toLowerCase();
+
+console.log(url); // javascript-array-join-example
