@@ -258,3 +258,29 @@ const title = 'JavaScript array join example';
 const url = title.split(' ').join('-').toLowerCase();
 
 console.log(url); // javascript-array-join-example
+
+
+//Spread Operator(...) in array
+// The spread operator allows you to spread out elements of an iterable object such as an array, map, or set.
+const odd = [1,3,5];
+const combined = [2,4,6, ...odd];
+console.log(combined); // [ 2, 4, 6, 1, 3, 5 ]
+
+
+//reverse() method of an array
+// The reverse() method reverses the order of elements within the array and returns the modified array with elements in the reversed order.
+const colors = ['red','green','blue'];
+colors.reverse();
+
+console.log(colors); // ['blue', 'green', 'red']
+
+// example2
+const books = [
+  { title: 'Eloquent JavaScript', author: 'Marijn Haverbeke' },
+  { title: 'JavaScript: The Good Parts', author: 'Douglas Crockford' },
+  { title: 'JavaScript: The Definitive Guide', author: 'David Flanagan' },
+];
+
+books.reverse();
+
+console.log(books);
