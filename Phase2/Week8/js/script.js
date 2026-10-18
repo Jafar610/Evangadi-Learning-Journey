@@ -282,5 +282,27 @@ const books = [
 ];
 
 books.reverse();
-
 console.log(books);
+
+
+//continue
+
+//The continue statement terminates the execution of the statement in the current iteration of a loop such as a for, while, and do…while loop and immediately continues to the next iteration.
+
+for (let i = 0; i < 10; i++) {
+  if (i % 2 === 0) {
+    continue;
+  }
+  console.log(i);
+}
+
+
+// example
+let i = 0;
+while (i < 10) {
+  i++;
+  if (i % 2 === 0) {
+    continue;
+  }
+  console.log(i);
+}
