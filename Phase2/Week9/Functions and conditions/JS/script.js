@@ -147,3 +147,23 @@ const grade = (score)=>{
     
 }
 console.log(grade(79));
+
+
+
+//Q15
+function add(x = 1, y = x, z = x + y) {
+    return x + y + z;
+}
+
+console.log(add()); // 4
+
+//Q16
+
+function add(x, y = 1, z = 2) {
+    console.log( arguments.length );
+    return x + y + z;
+}
+
+add(10); // 1
+add(10, 20); // 2
+add(10, 20, 30); // 3
