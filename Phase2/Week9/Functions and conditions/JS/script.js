@@ -60,7 +60,8 @@ console.log(converter(4));
 const count = (num) => {
   if (typeof num !== "number") return "please enter a valid number";
 //   return num + 1;
-  return ++num;
+// return ++num;
+  return num+=1;
 };
 console.log(count(2));
 
@@ -78,7 +79,7 @@ console.log(Area(3, 5));
 
 //Q9
 const legCounter = (chicken, cows, pigs)=>{
-    if(!Number.isInteger(chicken, cows, pigs) ||chicken < 0 || cows < 0 || pigs < 0 ){
+    if(!Number.isInteger(chicken, cows, pigs) ||  chicken < 0 || cows < 0 || pigs < 0 ){
         return "Enter a valid number";
     }
     let noOfLegs = chicken * 2 + cows * 4 + pigs * 4;
@@ -89,45 +90,48 @@ console.log(legCounter(2, 4,5));
 
 
 //Q10
-const twoArray = (number)=>{
-    if(!Array.isArray(number) || Array.length < 2) return "Enter valid array number";
-    let fNumber = number[0]*3;
-    return fNumber;
-}
-console.log(twoArray([5, true]));
+const twoArray = (number) => { 
+  if(!Array.isArray(number) || number.length < 2) return "Enter valid array number"; 
+  
+  let fNumber = number[0] * 3; 
+  return fNumber; 
+} 
+
+console.log(twoArray([5, 2])); // Correctly outputs 15
+console.log(twoArray([5]));    // Outputs "Enter valid array number"
+
 
 
 
 //Q11
 const Equality = (num1, num2)=>{
-    if(!Number.isNaN(num1) && !Number.isNaN(num2) && num1 === num2){
-        return true;
-    }else{
+    if(typeof num1 !== 'number' || typeof num2 !== 'number'){
         return false;
     }
+     return num1 === num2;
 }
-console.log(Equality(12,23));
+console.log(Equality(12,13));
 
 
 
 //Q12
 const divisble = (num)=>{
-    if(Number.isInteger(num)){
-       return 100 % num === 0 ? true : false;
+    if(!Number.isInteger(num)){
+        return "Enter a valid number";
     }
-    return "Enter a valid number";
+    return num % 100 === 0;
 }
-console.log(divisble(20));
+console.log(divisble(200));
 console.log(divisble(21));
 
 
 
 //Q13
 const oddEven = (num)=>{
-    if(Number.isInteger(num)){
-       return num % 2 === 0 ? "Even" : "Odd";
+    if(!Number.isInteger(num)){
+      return "Enter a valid number"
     }
-    return "Enter a valid number"
+     return num % 2 === 0 ? "Even" : "Odd";
 }
 console.log(oddEven(12));
 console.log(oddEven(13));
@@ -135,18 +139,34 @@ console.log(oddEven(13));
 
 
 //Q14
-const grade = (score)=>{
-    if(!Number.isNaN(score)){
-        if(score < 0 || score > 100) return "Invalid score";
-        else if(score >= 90 && score <=100) return "Grade A";
-        else if(score >= 80 && score < 90) return "Grade B";
-        else if(score <= 79) return "Grade C";
-    }else{
-        return "Enter a valid score";
-    }
-    
-}
+// const grade = (score) => {
+//   if (typeof score !== 'number' || score < 0 || score > 100) {
+//     return "Invalid score";
+//   }
+
+//   if (score >= 90) return "Grade A";
+//   if (score >= 80) return "Grade B";
+//   return "Grade C";
+// };
+
+// console.log(grade(79));
+
+
+const grade = (score) => {
+  switch (true) {
+    case typeof score !== 'number' || score < 0 || score > 100:
+      return "Invalid score";
+    case score >= 90:
+      return "Grade A";
+    case score >= 80:
+      return "Grade B";
+    default:
+      return "Grade C";
+  }
+};
+
 console.log(grade(79));
+
 
 
 
