@@ -72,3 +72,4 @@ arr.shift();
 console.log(arr);
 arr.unshift('Jafar');
 console.log(arr);
+console.log(arr.filter((n)=>n === 3))

@@ -57,13 +57,151 @@ const arr3 = (num) => {
   } else {
     var sum = 0;
     for (i = 0; i < num.length; i++) {
-        if(!Number.isInteger(num[i])){
-            console.log("please enter a valid number");
-            break;
-        }
+      if (!Number.isInteger(num[i])) {
+        continue;
+      }
       sum += num[i];
     }
     console.log(sum);
   }
 };
-arr3([5, 6, 99, 8, 76, 4, 68, 44]);
+arr3([5, 6, "99", 8, "76", 4, "68", 44]);
+
+//Q7
+
+const arr4 = (num) => {
+  if (!Array.isArray(num)) {
+    console.log("Please Enter an array");
+  }
+  var SumOdd = 0,
+    SumEven = 0,
+    total;
+  for (i = 0; i < num.length; i++) {
+    if (!Number.isInteger(num[i])) {
+      console.log("please enter a valid number");
+      break;
+    }
+    if (num[i] % 2 === 0) {
+      SumEven += num[i];
+    } else {
+      SumOdd += num[i];
+    }
+  }
+
+  total = SumEven - SumOdd;
+
+  console.log(SumEven);
+  console.log(SumOdd);
+  console.log(total);
+};
+
+arr4([5, 6, 99, 8, 76, 4, 68, 44]);
+
+//Q8
+const arr5 = (num) => {
+  if (!Array.isArray(num)) {
+    console.log("Please Enter an array");
+  }
+  for (i = 0; i < num.length; i++) {
+    if (i % 2 === 0) {
+      console.log(num[i]);
+    }
+  }
+};
+// arr5([5, 6, 99, 8, 76, 4, 68, 44])
+arr5([11, "sam", 3, 7, "car"]);
+
+let sampleArray = [5, 6, 99, 8, 76, 4, 68, 44];
+//Q9
+
+const sArray = (num) => {
+  num.pop();
+  console.log(num);
+
+  num.unshift(32);
+  console.log(num);
+};
+
+sArray(sampleArray);
+
+//10
+
+const sortArray = (num) => {
+  num.sort((a, b) => a - b);
+  console.log(num);
+};
+
+sortArray(sampleArray);
+
+//Q11 and Q12
+let evangadiClass = {
+  lengthOfCourse: "1 Month",
+  website: "https://www.evangadi.com/",
+  isChallenging: false,
+  topicsCovered: ["HTML", "CSS", "Media Query", "JavaScript"],
+  students: [
+    {
+      name: "Abebe",
+      age: 34,
+      sex: "M",
+    },
+    {
+      name: "Kebede",
+      age: 44,
+      sex: "M",
+    },
+    {
+      name: "Almaz",
+      age: 27,
+      sex: "F",
+    },
+    {
+      name: "Challa",
+      age: 22,
+      sex: "M",
+    },
+    {
+      name: "Chaltu",
+      age: 19,
+      sex: "F",
+    },
+  ],
+};
+
+//Q11
+evangadiClass.lengthOfCourse = '5 Monthes';
+console.log(evangadiClass.lengthOfCourse);
+
+//Q12
+evangadiClass.topicsCovered.push('Bootstrap');
+console.log(evangadiClass.topicsCovered)
+
+
+//Q13
+const Avg = (num) =>{
+  let sum = 0;
+ for(i = 0; i < num.students.length; i++){
+  console.log(num.students[i].age);
+    sum+=num.students[i].age;
+ }
+console.log(sum/num.students.length);
+}
+Avg(evangadiClass);
+
+
+//Q14
+const Percentage = (num)=>{
+  let NumOfMale = 0
+  for(i = 0; i < num.students.length; i++){
+  // console.log(num.students[i].sex);
+  if(num.students[i].sex === 'F'){
+    continue
+  }
+  console.log(num.students[i].sex);
+    NumOfMale++
+ }
+// percentage = (part/whole) * 100
+  console.log((NumOfMale/num.students.length) * 100);
+}
+
+Percentage(evangadiClass)
