@@ -169,39 +169,80 @@ let evangadiClass = {
 };
 
 //Q11
-evangadiClass.lengthOfCourse = '5 Monthes';
+evangadiClass.lengthOfCourse = "5 Monthes";
 console.log(evangadiClass.lengthOfCourse);
 
 //Q12
-evangadiClass.topicsCovered.push('Bootstrap');
-console.log(evangadiClass.topicsCovered)
-
+evangadiClass.topicsCovered.push("Bootstrap");
+console.log(evangadiClass.topicsCovered);
 
 //Q13
-const Avg = (num) =>{
+const Avg = (num) => {
   let sum = 0;
- for(i = 0; i < num.students.length; i++){
-  console.log(num.students[i].age);
-    sum+=num.students[i].age;
- }
-console.log(sum/num.students.length);
-}
+  for (i = 0; i < num.students.length; i++) {
+    console.log(num.students[i].age);
+    sum += num.students[i].age;
+  }
+  console.log(sum / num.students.length);
+};
 Avg(evangadiClass);
 
-
 //Q14
-const Percentage = (num)=>{
-  let NumOfMale = 0
-  for(i = 0; i < num.students.length; i++){
-  // console.log(num.students[i].sex);
-  if(num.students[i].sex === 'F'){
-    continue
+const Percentage = (num) => {
+  let NumOfMale = 0;
+  for (i = 0; i < num.students.length; i++) {
+    // console.log(num.students[i].sex);
+    if (num.students[i].sex === "F") {
+      continue;
+    }
+    console.log(num.students[i].sex);
+    NumOfMale++;
   }
-  console.log(num.students[i].sex);
-    NumOfMale++
- }
-// percentage = (part/whole) * 100
-  console.log((NumOfMale/num.students.length) * 100);
-}
+  // percentage = (part/whole) * 100
+  console.log((NumOfMale / num.students.length) * 100);
+};
 
-Percentage(evangadiClass)
+Percentage(evangadiClass);
+
+//PUZZLE
+
+//Q15
+const number = (low, high) => {
+  if (low >= high) {
+    console.log(
+      "Your low number greater than or equal to high please try again.",
+    );
+  } else {
+    let num = [];
+    for (i = low; i < high - 1; i++) {
+      num.push((low += 1));
+    }
+    console.log(num);
+    for (i = 0; i < num.length; i++) {
+      if (num[i] % 3 === 0) {
+        console.log(`${num[i]} is div by 3`);
+      }
+    }
+  }
+};
+number(2, 10);
+
+// Q16
+const FizzBuzz = () => {
+  let mutipleby3 = [];
+  let mutipleby5 = [];
+  for (i = 1; i <= 10; i++) {
+    mutipleby3.push(3 * i);
+    mutipleby5.push(5 * i);
+    console.log(5 * i);
+  }
+  if (mutipleby3) {
+    console.log("Fizz");
+  }
+  if (mutipleby5) {
+    console.log("Buzz");
+  }
+  
+};
+
+FizzBuzz();
