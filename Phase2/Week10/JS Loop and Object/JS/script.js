@@ -67,8 +67,9 @@ const arr3 = (num) => {
 };
 arr3([5, 6, "99", 8, "76", 4, "68", 44]);
 
-//Q7
 
+
+//Q7
 const arr4 = (num) => {
   if (!Array.isArray(num)) {
     console.log("Please Enter an array");
@@ -79,7 +80,7 @@ const arr4 = (num) => {
   for (i = 0; i < num.length; i++) {
     if (!Number.isInteger(num[i])) {
       console.log("please enter a valid number");
-      break;
+      // break;
     }
     if (num[i] % 2 === 0) {
       SumEven += num[i];
@@ -228,21 +229,48 @@ const number = (low, high) => {
 number(2, 10);
 
 // Q16
-const FizzBuzz = () => {
-  let mutipleby3 = [];
-  let mutipleby5 = [];
-  for (i = 1; i <= 10; i++) {
-    mutipleby3.push(3 * i);
-    mutipleby5.push(5 * i);
-    console.log(5 * i);
-  }
-  if (mutipleby3) {
-    console.log("Fizz");
-  }
-  if (mutipleby5) {
-    console.log("Buzz");
-  }
+// const FizzBuzz = () => {
+//   let mutipleby3 = [];
+//   let mutipleby5 = [];
+//   for (i = 1; i <= 10; i++) {
+//     mutipleby3.push(3 * i);
+//     mutipleby5.push(5 * i);
+//     console.log(5 * i);
+//   }
+//   if (mutipleby3) {
+//     console.log("Fizz");
+//   }
+//   if (mutipleby5) {
+//     console.log("Buzz");
+//   }
   
-};
+// };
 
-FizzBuzz();
+// FizzBuzz();
+
+
+
+//Additional Thinks.
+const arrs = [2,4,5,7];
+let sum = 0;
+for(i =0; i<arrs.length; i++){
+  console.log(arrs.at(i));
+  sum = sum + arrs.at(i);
+}
+console.log(sum);
+
+
+const sampArr = (arr)=>{
+  for(i = 0; i < arr.length; i++){
+    if(arr.at(i) % 2 === 0){
+      console.log(`${arr.at(i)} is even`)  ;
+    }
+    else{
+      console.log(`${arr.at(i)} is odd`) ;
+    }
+  }
+}
+
+sampArr([2,4,5,7]);
+
+
