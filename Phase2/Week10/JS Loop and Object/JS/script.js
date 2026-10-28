@@ -259,6 +259,9 @@ for(i =0; i<arrs.length; i++){
 }
 console.log(sum);
 
+arrs.reverse()
+console.log(arrs);
+
 
 const sampArr = (arr)=>{
   for(i = 0; i < arr.length; i++){
@@ -274,3 +277,21 @@ const sampArr = (arr)=>{
 sampArr([2,4,5,7]);
 
 
+const books = [
+  { title: 'Eloquent JavaScript', author: 'Marijn Haverbeke' },
+  { title: 'JavaScript: The Good Parts', author: 'Douglas Crockford' },
+  { title: 'JavaScript: The Definitive Guide', author: 'David Flanagan' },
+];
+
+books.reverse();
+
+console.log(books);
+
+
+const arrayLike = {
+  length: 3,
+  unrelated: "bar",
+  2: 2,
+  3: 3, // ignored by reverse() since length is 3
+};
+console.log(Array.prototype.reverse.call(arrayLike));
