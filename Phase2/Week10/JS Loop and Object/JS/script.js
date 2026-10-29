@@ -340,3 +340,42 @@ contacts.map((contact)=>{
   console.log('Hello ' + contact.name);
 });
 
+// filter() method
+const cities = [
+  { name: 'Los Angeles', population: 3_792_621 },
+  { name: 'New York', population: 8_175_133 },
+  { name: 'Chicago', population: 2_695_598 },
+  { name: 'Houston', population: 2_099_451 },
+  { name: 'Philadelphia', population: 1_526_006 },
+];
+
+const bigCities = cities.filter((city)=>{
+ return city.name === 'Los Angeles';
+})
+
+console.log(bigCities);
+
+
+// sort()
+let sortNum = [0, 2, 5, 3,11, 12, 13];
+sortNum.sort((a, b) => a - b);
+// sortNum.sort((a,b) => b-a)
+console.log(sortNum);
+
+
+
+let animals = ['cat', 'dog', 'elephant', 'bee', 'ant'];
+animals.sort();
+
+console.log(animals);
+
+let employees = [
+  { name: 'John', salary: 90000, hireDate: 'July 1, 2010' },
+  { name: 'David', salary: 75000, hireDate: 'August 15, 2009' },
+  { name: 'Ana', salary: 80000, hireDate: 'December 12, 2011' },
+];
+
+// sort by salary
+employees.sort((x, y) => x.salary - y.salary);
+
+console.table(employees);
