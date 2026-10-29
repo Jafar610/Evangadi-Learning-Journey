@@ -67,8 +67,6 @@ const arr3 = (num) => {
 };
 arr3([5, 6, "99", 8, "76", 4, "68", 44]);
 
-
-
 //Q7
 const arr4 = (num) => {
   if (!Array.isArray(num)) {
@@ -243,50 +241,44 @@ number(2, 10);
 //   if (mutipleby5) {
 //     console.log("Buzz");
 //   }
-  
+
 // };
 
 // FizzBuzz();
 
-
-
 //Additional Thinks.
-const arrs = [2,4,5,7];
+const arrs = [2, 4, 5, 7];
 let sum = 0;
-for(i =0; i<arrs.length; i++){
+for (i = 0; i < arrs.length; i++) {
   console.log(arrs.at(i));
   sum = sum + arrs.at(i);
 }
 console.log(sum);
 
-arrs.reverse()
+arrs.reverse();
 console.log(arrs);
 
-
-const sampArr = (arr)=>{
-  for(i = 0; i < arr.length; i++){
-    if(arr.at(i) % 2 === 0){
-      console.log(`${arr.at(i)} is even`)  ;
-    }
-    else{
-      console.log(`${arr.at(i)} is odd`) ;
+const sampArr = (arr) => {
+  for (i = 0; i < arr.length; i++) {
+    if (arr.at(i) % 2 === 0) {
+      console.log(`${arr.at(i)} is even`);
+    } else {
+      console.log(`${arr.at(i)} is odd`);
     }
   }
-}
+};
 
-sampArr([2,4,5,7]);
-
+sampArr([2, 4, 5, 7]);
 
 const books = [
-  { title: 'Eloquent JavaScript', author: 'Marijn Haverbeke' },
-  { title: 'JavaScript: The Good Parts', author: 'Douglas Crockford' },
-  { title: 'JavaScript: The Definitive Guide', author: 'David Flanagan' },
+  { title: "Eloquent JavaScript", author: "Marijn Haverbeke" },
+  { title: "JavaScript: The Good Parts", author: "Douglas Crockford" },
+  { title: "JavaScript: The Definitive Guide", author: "David Flanagan" },
 ];
 
-books.reverse();
-
+const bk = books.toReversed();
+console.log(bk);
 console.log(books);
-
 
 const arrayLike = {
   length: 3,
@@ -295,3 +287,56 @@ const arrayLike = {
   3: 3, // ignored by reverse() since length is 3
 };
 console.log(Array.prototype.reverse.call(arrayLike));
+
+
+//toReserved() method
+const contacts = [{ name: "John" }, { name: "Alice" }, { name: "Bob" }];
+const reversedContacts = contacts.toReversed();
+
+console.log(contacts);
+console.log(reversedContacts);
+
+
+
+
+
+// toSpliced()
+
+
+//.map() in an array.
+
+const sampleNumber = (arr)=>{
+  console.log(arr.map((n)=>n * 4));
+}
+
+sampleNumber([2,3,5,2,6,2])
+
+const randomNames = (names)=>{
+  console.log(names.map((n)=> 'Hello ' + n))
+}
+randomNames(['Jafar', 'Kedi', 'Ayan', 'Hafiza', 'sebah']);
+
+
+const goals = [
+  {
+    name: 'Learn HTML',
+    date: '2025-06-01',
+  },
+  {
+    name: 'Learn CSS',
+    date: '2025-07-01',
+  },
+  {
+    name: 'Learn JavaScript',
+    date: '2025-08-01',
+  },
+];
+
+goals.map((goal)=>{
+  console.log(goal.name);
+});
+
+contacts.map((contact)=>{
+  console.log('Hello ' + contact.name);
+});
+
