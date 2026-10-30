@@ -96,6 +96,7 @@ const arr4 = (num) => {
 
 arr4([5, 6, 99, 8, 76, 4, 68, 44]);
 
+
 //Q8
 const arr5 = (num) => {
   if (!Array.isArray(num)) {
@@ -110,6 +111,8 @@ const arr5 = (num) => {
 // arr5([5, 6, 99, 8, 76, 4, 68, 44])
 arr5([11, "sam", 3, 7, "car"]);
 
+
+// given 
 let sampleArray = [5, 6, 99, 8, 76, 4, 68, 44];
 //Q9
 
@@ -179,7 +182,7 @@ console.log(evangadiClass.topicsCovered);
 const Avg = (num) => {
   let sum = 0;
   for (i = 0; i < num.students.length; i++) {
-    console.log(num.students[i].age);
+    // console.log(num.students[i].age);
     sum += num.students[i].age;
   }
   console.log(sum / num.students.length);
@@ -227,24 +230,33 @@ const number = (low, high) => {
 number(2, 10);
 
 // Q16
-// const FizzBuzz = () => {
-//   let mutipleby3 = [];
-//   let mutipleby5 = [];
-//   for (i = 1; i <= 10; i++) {
-//     mutipleby3.push(3 * i);
-//     mutipleby5.push(5 * i);
-//     console.log(5 * i);
-//   }
-//   if (mutipleby3) {
-//     console.log("Fizz");
-//   }
-//   if (mutipleby5) {
-//     console.log("Buzz");
-//   }
+const FizzBuzz = () => {
+  for (i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) console.log("FizzBuzz");
+    else if (i % 3 === 0) console.log("Fizz");
+    else if (i % 5 === 0) console.log("Buzz");
+  }
+};
 
-// };
+FizzBuzz();
 
-// FizzBuzz();
+// Q17
+function isEvens(num) {
+    const numStr = num.toString();
+    for (let i = 0; i < numStr.length; i++) {
+        const digit = parseInt(numStr[i], 10);
+        
+        if (digit % 2 !== 0) {
+            console.log(0);
+            return;
+        }
+    }
+    console.log(1);
+}
+
+isEvens(2442)
+
+
 
 //Additional Thinks.
 const arrs = [2, 4, 5, 7];
@@ -288,7 +300,6 @@ const arrayLike = {
 };
 console.log(Array.prototype.reverse.call(arrayLike));
 
-
 //toReserved() method
 const contacts = [{ name: "John" }, { name: "Alice" }, { name: "Bob" }];
 const reversedContacts = contacts.toReversed();
@@ -296,83 +307,74 @@ const reversedContacts = contacts.toReversed();
 console.log(contacts);
 console.log(reversedContacts);
 
-
-
-
-
 // toSpliced()
-
 
 //.map() in an array.
 
-const sampleNumber = (arr)=>{
-  console.log(arr.map((n)=>n * 4));
-}
+const sampleNumber = (arr) => {
+  console.log(arr.map((n) => n * 4));
+};
 
-sampleNumber([2,3,5,2,6,2])
+sampleNumber([2, 3, 5, 2, 6, 2]);
 
-const randomNames = (names)=>{
-  console.log(names.map((n)=> 'Hello ' + n))
-}
-randomNames(['Jafar', 'Kedi', 'Ayan', 'Hafiza', 'sebah']);
-
+const randomNames = (names) => {
+  console.log(names.map((n) => "Hello " + n));
+};
+randomNames(["Jafar", "Kedi", "Ayan", "Hafiza", "sebah"]);
 
 const goals = [
   {
-    name: 'Learn HTML',
-    date: '2025-06-01',
+    name: "Learn HTML",
+    date: "2025-06-01",
   },
   {
-    name: 'Learn CSS',
-    date: '2025-07-01',
+    name: "Learn CSS",
+    date: "2025-07-01",
   },
   {
-    name: 'Learn JavaScript',
-    date: '2025-08-01',
+    name: "Learn JavaScript",
+    date: "2025-08-01",
   },
 ];
 
-goals.map((goal)=>{
+goals.map((goal) => {
   console.log(goal.name);
 });
 
-contacts.map((contact)=>{
-  console.log('Hello ' + contact.name);
+contacts.map((contact) => {
+  console.log("Hello " + contact.name);
 });
 
 // filter() method
 const cities = [
-  { name: 'Los Angeles', population: 3_792_621 },
-  { name: 'New York', population: 8_175_133 },
-  { name: 'Chicago', population: 2_695_598 },
-  { name: 'Houston', population: 2_099_451 },
-  { name: 'Philadelphia', population: 1_526_006 },
+  { name: "Los Angeles", population: 3_792_621 },
+  { name: "New York", population: 8_175_133 },
+  { name: "Chicago", population: 2_695_598 },
+  { name: "Houston", population: 2_099_451 },
+  { name: "Philadelphia", population: 1_526_006 },
 ];
 
-const bigCities = cities.filter((city)=>{
- return city.name === 'Los Angeles';
-})
+const bigCities = cities.filter((city) => {
+  return city.name === "Los Angeles";
+});
 
 console.log(bigCities);
 
-
 // sort()
-let sortNum = [0, 2, 5, 3,11, 12, 13];
+let sortNum = [0, 2, 5, 3, 11, 12, 13];
 sortNum.sort((a, b) => a - b);
 // sortNum.sort((a,b) => b-a)
 console.log(sortNum);
 
-
-
-let animals = ['cat', 'dog', 'elephant', 'bee', 'ant'];
+let animals = ["cat", "dog", "elephant", "bee", "ant"];
 animals.sort();
 
 console.log(animals);
 
 let employees = [
-  { name: 'John', salary: 90000, hireDate: 'July 1, 2010' },
-  { name: 'David', salary: 75000, hireDate: 'August 15, 2009' },
-  { name: 'Ana', salary: 80000, hireDate: 'December 12, 2011' },
+  { name: "John", salary: 90000, hireDate: "July 1, 2010" },
+  { name: "David", salary: 75000, hireDate: "August 15, 2009" },
+  { name: "Ana", salary: 80000, hireDate: "December 12, 2011" },
 ];
 
 // sort by salary
