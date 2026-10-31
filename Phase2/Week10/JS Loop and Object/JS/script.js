@@ -381,3 +381,26 @@ let employees = [
 employees.sort((x, y) => x.salary - y.salary);
 
 console.table(employees);
+
+// Object 
+
+const person = {
+  firstName: 'Jafar',
+  lastName : 'Mohamed',
+  walk: function(){console.log('I can walk');},
+  status: 'Single',
+}
+
+person.walk();
+console.log(person.firstName);
+console.log(person.lastName);
+
+const calculation = {
+  num1 : 22,
+  num2 : 24,
+  adder: function(){
+    console.log(this.num1 + this.num2);
+  }
+}
+
+calculation.adder()
