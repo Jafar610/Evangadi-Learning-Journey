@@ -402,5 +402,34 @@ const calculation = {
     console.log(this.num1 + this.num2);
   }
 }
+calculation.adder();
 
-calculation.adder()
+// ES6 provide simple way of defining function inside object.
+const ExampleObject = {
+  language:'Javascript',
+  goal(){
+    console.log('Mastering Javascript programming laguage.');
+  }
+}
+
+ExampleObject.goal();
+
+// constructor
+function Person(fn, ls){
+  this.firstName = fn;
+  this.lastName = ls;
+
+
+  this.getFullName = function(){
+    return (this.firstName + ' ' + this.lastName)
+  }
+}
+
+const person1 = new Person('Ahmed', 'Mohamed');
+console.log(person1.firstName);
+console.log(person1.getFullName());
+
+
+const person2 = new Person('Jafar', 'Mohamed');
+console.log(person2.lastName);
+console.log(person2.getFullName());
