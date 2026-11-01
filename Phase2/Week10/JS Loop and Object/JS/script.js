@@ -418,7 +418,10 @@ ExampleObject.goal();
 function Person(fn, ls){
   this.firstName = fn;
   this.lastName = ls;
-
+ 
+  if(!new.target){
+    throw new Error('Its not allowed to create an object without a new keyword')
+  }
 
   this.getFullName = function(){
     return (this.firstName + ' ' + this.lastName)
@@ -433,3 +436,17 @@ console.log(person1.getFullName());
 const person2 = new Person('Jafar', 'Mohamed');
 console.log(person2.lastName);
 console.log(person2.getFullName());
+
+
+ class Name {
+  constructor(name) {
+    this.name = name;
+
+    this.greating = function(){
+      return(`Hello ${this.name}`);
+    }
+  }
+}
+
+const name1 = new Name('Jafar');
+console.log(name1.greating())
