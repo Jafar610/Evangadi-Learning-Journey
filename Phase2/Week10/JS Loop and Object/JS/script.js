@@ -449,4 +449,27 @@ console.log(person2.getFullName());
 }
 
 const name1 = new Name('Jafar');
-console.log(name1.greating())
+console.log(name1.greating());
+
+
+// prototype
+function People(name) {
+    this.name = name;
+}
+console.log(Person);
+console.log(Person.prototype);
+
+Person.prototype.greet = function() {
+    return "Hi, I'm " + this.name + "!";
+}
+
+let p1 = new People('John');
+console.log(p1.name);
+
+// let greeting = p1.greet();
+// console.log(greeting);
+
+let s = p1.toString();
+console.log(s);
+
+console.log(p1)
