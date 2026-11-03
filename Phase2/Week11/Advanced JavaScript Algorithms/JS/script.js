@@ -61,38 +61,116 @@ compare(27);
 //4 = 1x2x3x4;  ----- n = 1 x 2 x3 x ... x n
 
 // * SOLUTION 1
-const factorial = (num) =>{
-    if(num < 0) return 'Please Enter only positive number'
-    if(num===0){
-      return 1;
-    }
+const factorial = (num) => {
+  if (num < 0) return "Please Enter only positive number";
+  if (num === 0) {
+    return 1;
+  }
 
-    let f = 1;
-    for(i = 1; i <= num; i++){
-      f = f * num * factorial(num - 1)
-    }
+  let f = 1;
+  for (i = 1; i <= num; i++) {
+    f = f * num * factorial(num - 1); // n! = n * (n-1)! => 4! = 4*(4-1)! ---- 4! = 4 * (3)!
+  }
 
-    return f;
-}
+  return f;
+};
 console.log(factorial(3));
-
 
 // * SOLUTION 2
 
-const fact = (num)=>{
-  if(num === 0){
+const fact = (num) => {
+  if (num === 0) {
     return 1;
   }
-  let f =1;
-  for(i = 1; i <= num; i++){
+  let f = 1;
+  for (i = 1; i <= num; i++) {
     f = f * i;
   }
 
   return f;
-}
+};
 
 console.log(fact(5));
 
+//Question 4 (Meera array)
 
+//? ● A Meera array is defined to be an array containing only numbers as its elements and for all n values in the array, the value n*2 is not in the array.
 
+//? So [3, 5, -2] is a Meera array because 3*2, 5*2 or 2*2 are not in the array.
+//?  But [8, 3, 4] is not a Meera array because 2*4=8 and both 4 and 8 are elements found in the array.
 
+//? Write a function that takes an array of numbered elements and prints “I am a Meera array” in the console if its array does NOT contain n and also n*2 as value. Otherwise, the function prints “I am NOT a Meera array”
+// Todo: ○ Test 1: checkMeera([10, 4, 0, 5]) outputs “I am NOT a Meera array” because 5 * 2 is 10
+// Todo: ○ Test 2: checkMeera([7, 4, 9]) outputs “I am a Meera array”
+// Todo: ○ Test 1: checkMeera([1, -6, 4, -3]) outputs “I am NOT a Meera array” because -3 * 2 is -6
+
+// * SOLUTION 1
+
+const meeraArray = (arr) => {
+  let result;
+  for (i = 0; i < arr.length; i++) {
+    result = 2 * arr[i];
+
+    for (j = 0; j < arr.length; j++) {
+      if (result === arr[j]) {
+        return "I am Not Meera Array";
+      } else {
+        continue;
+      }
+    }
+  }
+
+  return "I am Meera Array.";
+};
+
+console.log(meeraArray([10, 4, 0, 5]));
+console.log(meeraArray([7, 4, 9]));
+console.log(meeraArray([1, -6, 4, -3]));
+
+// * SOLUTION 2
+const isMeera = (arr) => {
+  const newArray = arr.map((x) => x * 2);
+  console.log(newArray);
+
+  for (const el of arr) {
+    if (newArray.includes(el)) {
+      return "I am not a meera array";
+    } else {
+      continue;
+    }
+  }
+  return "I am Meera array";
+};
+console.log(isMeera([7, 4, 9]));
+console.log(isMeera([1, -6, 4, -3]));
+console.log(isMeera([10, 4, 0, 5]));
+
+// Question 5 (Dual array)
+
+//? ● Define a Dual array to be an array where every value occurs exactly twice. For example,
+//?  {1, 2, 1, 3, 3, 2} is a dual array.The following arrays are not Dual arrays {2, 5, 2, 5, 5} (5 occurs three times instead of two times) {3, 1, 1, 2, 2} (3 occurs once instead of two times).
+
+// Todo: Write a function named isDual that returns 1 if its array argument is a Dual array. Otherwise it returns 0.
+
+const isDual = (arr) => {
+  if (arr.length % 2 !== 0) {
+    return 0;
+  }
+
+  for (i = 0; i < arr.length; i++) {
+    let count = 0;
+    for (j = 0; j < arr.length; j++) {
+      if (arr[j] === arr[i]) {
+        count++;
+      }
+    }
+
+    if(count !== 2){
+      return 0;
+    }
+  }
+  return 1;
+};
+
+console.log(isDual([3, 1, 1, 2, 2]));
+console.log(isDual([1, 2, 1, 3, 3, 2]));
