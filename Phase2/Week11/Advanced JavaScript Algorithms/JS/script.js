@@ -3,34 +3,23 @@
 // TODO : ○ Test 1: getOnlyEvens([1, 2, 3, 6, 4, 8]) prints [ 4]
 // TODO : ○ Test 2: getOnlyEvens([0, 1, 2, 3, 4]) prints [0, 2, 4]
 
-// crafting steps for problem 1
-// * checking the number weather its even or odd.
-// * count only the even number
-// * store the counted number.
 
-// PseudoCode1
-// * create a function called getOnlyEvens that take an argument.
-// * use for loop to itarate the array
-// * Create if statement to check the number even or odd.
-// * if number % 2 === 0 then even
-// * count the even number only.
-// * return the value.
 
 //JS code.
-const getOnlyEvens = (number) => {
-  if (!Array.isArray(number)) console.log("Please enter array number.");
-  let sum = 0,
-    newArr = [];
-  for (i = 0; i < number.length; i++) {
-    if (number[i] % 2 === 0) {
-      sum += 1;
-      newArr.push(i);
-    }
-  }
-  console.log(sum);
-  console.log(newArr);
-};
-getOnlyEvens([1, 2, 3, 6, 4, 8]);
+// const getOnlyEvens = (number) => {
+//   if (!Array.isArray(number)) console.log("Please enter array number.");
+//   let sum = 0,
+//     newArr = [];
+//   for (i = 0; i < number.length; i++) {
+//     if (number[i] % 2 === 0) {
+//       sum += 1;
+//       newArr.push(i);
+//     }
+//   }
+//   console.log(sum);
+//   console.log(newArr);
+// };
+// getOnlyEvens([1, 2, 3, 6, 4, 8]);
 // getOnlyEvens([0, 1, 2, 3, 4])
 
 //Question 2
@@ -38,17 +27,22 @@ getOnlyEvens([1, 2, 3, 6, 4, 8]);
 // Todo : ○ Test 1: reverseCompare(72) prints "ok" because 72 > 27
 // Todo : ○ reverseCompare(23) prints "Not ok", because 23 is not greater than 32
 
+
+
 // JS code
 const compare = (num) => {
   let revNumber = num.toString().split("").reverse().join("");
   let IntNum = parseInt(revNumber, 10);
   if (num > IntNum) {
-    console.log("OK");
+    return "OK";
   } else {
-    console.log("NOT OK");
+    return "NOT OK";
   }
 };
-compare(27);
+console.log(compare(27))
+
+
+
 
 //Question 3
 // ? Write a function that takes a positive integer and returns the factorial of the number.
@@ -79,18 +73,19 @@ console.log(factorial(3));
 // * SOLUTION 2
 
 const fact = (num) => {
+  if(!Number.isInteger(num) || num < 0) return 'Please enter a valid number';
   if (num === 0) {
     return 1;
   }
   let f = 1;
   for (i = 1; i <= num; i++) {
-    f = f * i;
+    f = f * i; //4 -- 1x2x3
   }
 
   return f;
 };
 
-console.log(fact(5));
+console.log(fact(-4));
 
 //Question 4 (Meera array)
 
@@ -127,6 +122,9 @@ console.log(meeraArray([10, 4, 0, 5]));
 console.log(meeraArray([7, 4, 9]));
 console.log(meeraArray([1, -6, 4, -3]));
 
+
+
+
 // * SOLUTION 2
 const isMeera = (arr) => {
   const newArray = arr.map((x) => x * 2);
@@ -144,6 +142,11 @@ const isMeera = (arr) => {
 console.log(isMeera([7, 4, 9]));
 console.log(isMeera([1, -6, 4, -3]));
 console.log(isMeera([10, 4, 0, 5]));
+
+
+
+
+
 
 // Question 5 (Dual array)
 
@@ -174,3 +177,35 @@ const isDual = (arr) => {
 
 console.log(isDual([3, 1, 1, 2, 2]));
 console.log(isDual([1, 2, 1, 3, 3, 2]));
+
+
+// Question 6
+//?  ● Write a function that takes the number of seconds and returns the digital format clock
+//? time as a string. Time should be counted from 00:00:00.
+// ○ Examples: digitalClock(5025) as "01:23:45" 5025 seconds is 1 hour, 23 mins, 45
+// secs.
+// ■ digitalClock(61201) as "17:00:01" No AM/PM. 24h format.
+// ■ digitalClock(87000) as "00:10:00" It's 00:10 next day.
+
+
+function digitalClock(seconds) {
+    // Calculate total hours and convert to 24-hour format
+    const hours = Math.floor(seconds / 3600) % 24;
+
+    // Calculate remaining minutes
+    const minutes = Math.floor((seconds % 3600) / 60);
+
+    // Calculate remaining seconds
+    const remainingSeconds = seconds % 60;
+
+    // Format each value with two digits
+    const formattedHours = String(hours).padStart(2, '0');
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    const formattedSeconds = String(remainingSeconds).padStart(2, '0');
+
+    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+}
+
+console.log(digitalClock(5025));  // 01:23:45
+console.log(digitalClock(61201)); // 17:00:01
+console.log(digitalClock(87000)); // 00:10:00
