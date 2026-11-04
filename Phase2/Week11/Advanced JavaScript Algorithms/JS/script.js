@@ -209,3 +209,20 @@ function digitalClock(seconds) {
 console.log(digitalClock(5025));  // 01:23:45
 console.log(digitalClock(61201)); // 17:00:01
 console.log(digitalClock(87000)); // 00:10:00
+
+
+
+// * Anonymous Functions
+(function() {
+    console.log('IIFE');
+})();
+
+
+let person = {
+    firstName: 'John',
+    lastName: 'Doe'
+};
+
+(function () {
+    console.log(person.firstName + ' ' + person.lastName);
+})(person);
