@@ -89,4 +89,28 @@ const factors = (num)=>{
     }
     return fact;
 }
-console.log(factors(12))
+console.log(factors(12));
+
+
+
+const halvesNum = (num)=>{
+   // 4/2 = 2=> keri 2.
+   // 8/2 = 4 => keri 
+
+   if(num % 2 === 0){
+    let num1 = num /2;
+    let num2 = num1;
+
+    console.log(num1, num2);
+   }else{
+     let dev = num / 2;
+     let oddNum1 = Math.floor(dev)
+     let oddNum2 = Math.ceil(dev);
+
+     console.log(oddNum1, oddNum2)
+   }
+
+
+
+}
+halvesNum(5)
