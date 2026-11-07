@@ -148,4 +148,25 @@ console.log(footballPoint(3, 4, 2));
 const remainder = (x, y)=>{
     return x % y;
 }
-console.log(remainder(4,5))
+console.log(remainder(4,5));
+
+
+//? Create a function that takes an integer and returns true if it's divisible by 100, otherwise return false.
+
+const divisble = (num)=>{
+    if(num % 100 === 0) return true;
+    return false;
+}
+
+console.log(divisble(1000));
+
+
+
+//?Your game needs a message for the player. Create gameMessage to return "Keep playing" when health is above 0. Otherwise, return "Game over".
+
+const gameMessage = (health)=>{
+    if(health > 0){
+        return "Keep Playing";
+    }
+    return "Game Over";
+}
