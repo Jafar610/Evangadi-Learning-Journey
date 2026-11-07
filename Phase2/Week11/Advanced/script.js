@@ -198,3 +198,12 @@ const spaceship = (popullation, n)=>{
     return (n * 360) + popullation;
 }
 console.log(spaceship(256, 2));
+
+
+//? Create a function that will work as the modulus operator % without using the modulus operator. The modulus operator is a way to determine the remainder of a division operation. Instead of returning the result of the division, the modulo operation returns the whole number remainder.
+
+const remin = (a, b)=>{
+    return a - (b * Math.floor(a / b))
+}
+
+console.log(remin(5, 2))
