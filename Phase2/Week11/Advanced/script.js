@@ -94,8 +94,7 @@ console.log(factors(12));
 
 
 const halvesNum = (num)=>{
-   // 4/2 = 2=> keri 2.
-   // 8/2 = 4 => keri 
+
 
    if(num % 2 === 0){
     let num1 = num /2;
@@ -113,4 +112,40 @@ const halvesNum = (num)=>{
 
 
 }
-halvesNum(5)
+halvesNum(4);
+
+
+// Additional Question
+//? Write a function that takes two integers (hours, minutes), converts them to seconds, and adds them.
+// Todo: First convert the hour to minutes and add them.
+// Todo: convert the total minute to second.
+
+const converter = (hours, minutes) =>{
+    let total = (hours * 60 * 60) + (minutes * 60);
+
+    return total;
+
+}
+console.log(converter(1,40));
+
+
+
+
+//? Create a function that takes the number of wins, draws and losses and calculates the number of points a football team has obtained so far.
+//* wins get 3 points
+//* draws get 1 point
+//* losses get 0 points
+//* e.g footballPoints(3, 4, 2) ➞ 13
+
+const footballPoint =(wins, draws, losses)=>{
+    return (wins * 3 + draws * 1 + losses * 0);
+}
+console.log(footballPoint(3, 4, 2));
+
+
+//? There is a single operator in JavaScript, capable of providing the remainder of a division operation. Two numbers are passed as parameters. The first parameter divided by the second parameter will have a remainder, possibly zero. Return that value.
+
+const remainder = (x, y)=>{
+    return x % y;
+}
+console.log(remainder(4,5))
