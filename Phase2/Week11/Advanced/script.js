@@ -170,3 +170,31 @@ const gameMessage = (health)=>{
     }
     return "Game Over";
 }
+console.log(gameMessage(10))
+
+
+//? Given an n-sided regular polygon n, return the total sum of internal angles (in degrees).
+// Notes
+// n will always be greater than 2.
+// The formula (n - 2) x 180 gives the sum of all the measures of the angles of an n-sided polygon.
+// e.g sumPolygon(3) ➞ 180
+// sumPolygon(4) ➞ 360
+// sumPolygon(6) ➞ 720
+
+const sumPloygon = (n)=>{
+    if(n<2) return 'Please enter an angle more than 2 side.';
+    return (n-2) * 180;
+}
+console.log(sumPloygon(6));
+
+
+//?  A spaceship will take three decades to build. Given the current population and the number of people born each month, return the population when the spaceship is complete.
+// Examples
+// futurePeople(256, 2) ➞ 976
+// futurePeople(3248, 6) ➞ 5408
+// futurePeople(5240, 3) ➞ 6320
+
+const spaceship = (popullation, n)=>{
+    return (n * 360) + popullation;
+}
+console.log(spaceship(256, 2));
