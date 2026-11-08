@@ -206,4 +206,33 @@ const remin = (a, b)=>{
     return a - (b * Math.floor(a / b))
 }
 
-console.log(remin(5, 2))
+console.log(remin(5, 2));
+
+
+// Evaluate a gapless arithmetic expression written as a string. Inputs use +, -, *, and / with normal operator precedence. A number may begin with a minus sign, and division may produce a decimal result.
+
+// Examples
+// calculator("23+4") ➞ 27
+// calculator("45-15") ➞ 30
+// calculator("13+2-5*2") ➞ 5
+// calculator("49/7*2-3") ➞ 11
+
+const calculator = (str)=>{
+    return eval(str);
+}
+
+console.log(calculator("49/7*2-3"));
+
+
+// You call your spouse in anger and a "little" argument takes place. Count the total amount of insults used. Given an object of insults, return the total amount of insults used.
+
+// Examples
+// totalAmountAdjectives({ a: "moron" }) ➞ 1
+
+// totalAmountAdjectives({ a: "idiot", b: "idiot", c: "idiot" }) ➞ 3
+
+
+const totalAmountAdjectives = (obj)=>{
+    return Object.keys(obj).length;
+}
+console.log(totalAmountAdjectives({ a: "idiot", b: "idiot", c: "idiot", d:"idiot" }))
