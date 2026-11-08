@@ -236,3 +236,28 @@ const totalAmountAdjectives = (obj)=>{
     return Object.keys(obj).length;
 }
 console.log(totalAmountAdjectives({ a: "idiot", b: "idiot", c: "idiot", d:"idiot" }))
+
+
+// Create a function that takes the number of daily average recovered cases recovers, daily average newCases, current activeCases, and returns the number of days it will take to reach zero cases.
+// Examples
+// endCorona(4000, 2000, 77000) ➞ 39
+// endCorona(3000, 2000, 50699) ➞ 51
+// endCorona(30000, 25000, 390205) ➞ 79
+
+const endCorona = (recovered, newCases, activeCases)=>{
+    return (Math.ceil(activeCases/(recovered - newCases)));
+}
+console.log(endCorona(30000, 25000, 390205))
+
+
+
+// Each entry in results is either "pass" or "fail". Create backToBackFailures to return true if two failures appear next to each other anywhere in the array. Otherwise, return false. Failures separated by a pass do not count.
+
+// Examples
+// backToBackFailures(["pass","fail","fail"]) // true
+
+// backToBackFailures(["fail","pass","fail"]) // false
+
+// backToBackFailures(["pass","pass"]) // false
+
+
