@@ -329,4 +329,30 @@ function itemLabel(count) {
   return count + " items";
 }
 
-console.log(itemLabel(3))
+console.log(itemLabel(3));
+
+
+// Given an array, rotate the values clockwise by one (the last value is sent to the first position).
+// Check the examples for a better understanding.
+// Examples
+// rotateByOne([1, 2, 3, 4, 5]) ➞ [5, 1, 2, 3, 4]
+// rotateByOne([6, 5, 8, 9, 7]) ➞ [7, 6, 5, 8, 9]
+// rotateByOne([20, 15, 26, 8, 4]) ➞ [4, 20, 15, 26, 8]
+
+
+
+
+// Create a function that takes a string txt and a number n and returns the repeated string n number of times.
+// If given argument txt is not a string, return Not A String !!
+// Examples
+// repeatString("Mubashir", 2) ➞ "MubashirMubashir"
+// repeatString("Matt", 3) ➞ "MattMattMatt"
+// repeatString(1990, 7) ➞ "Not A String !!"
+
+function repeatString(txt, n) {
+	if(typeof(txt) !== 'string'){
+    return "Not A String !!";
+  }else{
+    return txt.repeat(n);
+  }
+}
