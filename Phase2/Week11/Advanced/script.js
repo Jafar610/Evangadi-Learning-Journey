@@ -261,3 +261,72 @@ console.log(endCorona(30000, 25000, 390205))
 // backToBackFailures(["pass","pass"]) // false
 
 
+
+
+
+// For this challenge, an email reply has a subject that starts with "Re:". Write isEmailReply to return true if subject starts with that exact prefix, or false otherwise.
+
+// Examples
+// isEmailReply("Re: Lunch tomorrow") // true
+
+// isEmailReply("Lunch Re: tomorrow") // false
+
+// isEmailReply("RE: Lunch") // false
+
+
+
+
+
+
+// Create scoresByTarget to return two arrays: first the scores that are at least target, then the scores below it. Return them together as [reached, below]. Keep the original order within each group and keep repeated scores.
+
+// Examples
+// scoresByTarget([40,70,50], 50) // [[70,50],[40]]
+
+// scoresByTarget([10,20], 30) // [[],[10,20]]
+
+// scoresByTarget([50,80], 50) // [[50,80],[]]
+
+
+
+
+
+
+// Create beforeCancel to return the actions before the first "cancel" in actions. Do not include "cancel" or anything after it. If there is no "cancel", return all the actions. Keep their order.
+
+// Examples
+// beforeCancel(["save","send","cancel","print"]) // ["save","send"]
+
+// beforeCancel(["cancel","save"]) // []
+
+// beforeCancel(["save","print"]) // ["save","print"]
+
+
+
+
+
+
+// Each task is written as [name, done], where done is true for a completed task and false otherwise. Create firstUnfinished to return the name of the first unfinished task in the given order. Return null if there are no unfinished tasks.
+
+// Examples
+// firstUnfinished([["write",true],["test",false],["ship",false]]) // "test"
+
+// firstUnfinished([["wash",true],["dry",true]]) // null
+
+// firstUnfinished([["read",false],["read",false]]) // "read"
+
+
+
+
+
+
+
+
+// The starter writes every count with the word "items", such as "3 items". Extend itemLabel to return "1 item" when the count is 1. Keep the current output for every other count.
+
+function itemLabel(count) {
+  if(count === 1) return count + " item";
+  return count + " items";
+}
+
+console.log(itemLabel(3))
