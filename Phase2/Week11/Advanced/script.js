@@ -356,3 +356,21 @@ function repeatString(txt, n) {
     return txt.repeat(n);
   }
 }
+
+
+
+
+// Bart is back at the chalkboard. Create chalkboard to repeat word exactly times times and return the result as one string, with no added spaces or line breaks.
+
+// Examples
+// chalkboard("Sorry", 3) // "SorrySorrySorry"
+
+// chalkboard("Oops", 1) // "Oops"
+
+// chalkboard("Again", 0) // ""
+
+
+const chalkboard = (word, times)=>{
+    return word.repeat(times)
+}
+console.log(chalkboard('Jafar', 2));
