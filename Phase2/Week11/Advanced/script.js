@@ -423,4 +423,37 @@ if(sum === n){
 }
 }
 
-isNarcissistic(153)
+isNarcissistic(153);
+
+
+// Group the even-indexed characters of the word first, then add a space, then group its odd-indexed characters. Preserve each character's case.
+
+// Examples
+// evenOddString("mubashir") ➞ "mbsi uahr"
+// Letters at even indexes = "mbsi"
+//  Letters at odd indexes = "uahr"
+//  Join both strings with a space
+
+// evenOddString("edabit") ➞ "eai dbt"
+
+// evenOddString("airforce") ➞ "aroc ifre"
+
+const evenOddString = (str)=>{
+    let evenstr = '';
+    let oddstr = '';
+    for(let i = 0; i<str.length; i++){
+        if(i % 2 === 0){
+            console.log(str[i]);
+            evenstr +=str[i];
+        }else{
+            console.log(str[i])
+            oddstr += str[i];
+        }
+    }
+    console.log(evenstr);
+    console.log(oddstr);
+
+    console.log(evenstr + " " + oddstr);
+}
+
+evenOddString("Jafar");
