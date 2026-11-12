@@ -374,3 +374,18 @@ const chalkboard = (word, times)=>{
     return word.repeat(times)
 }
 console.log(chalkboard('Jafar', 2));
+
+
+// The input is an integer or a string of decimal digits. Rearrange its digits to form and return the greatest possible integer.
+
+// Examples
+// rotateMaxNumber(123) ➞ 321
+
+// rotateMaxNumber("001") ➞ 100
+
+// rotateMaxNumber(999) ➞ 999
+
+function rotateMaxNumber(num) {
+	let rev =  num.toString().split('').sort((a,b)=>b-a).join('');
+  return parseInt(rev);
+}
