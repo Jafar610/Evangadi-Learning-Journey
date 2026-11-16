@@ -1,11 +1,7 @@
 let para = document.getElementById("first");
-para.textContent = "Hello There";
+console.log(para.className);
+para.className = "blue";
 // console.log(para.attributes.name.value);
-console.log(para.baseURI)
-
-if(para.attributes.name.value === 'Jafar'){
-    console.log("Jafar is there.");
-}
 
 
 let para2 = document.getElementById("second");
@@ -19,3 +15,20 @@ console.log(countries.firstElementChild.outerHTML)
 for(let i = 0; i < countries.children.length; i++){
     console.log(countries.children[i].innerHTML);
 }
+
+// Selecting elements using className().
+
+let listItems  = document.getElementsByClassName('pink');
+console.log(listItems)
+
+let arr = [];
+for(let i = 0; i < listItems.length; i++){
+// console.log(listItems[i].outerHTML);
+    arr.push(listItems[i]);
+}
+
+console.log(arr);
+for(let i = 0; i < arr.length; i++){
+    arr[i].className = "blue";
+}
+
