@@ -69,3 +69,33 @@ function loadJs(url){
 // loadJs("./script.js");
 
 
+//* appendChild 
+const creatingLists = (name)=>{
+    let std = document.createElement("li");
+    std.textContent = name;
+
+    document.getElementById("students").appendChild(std);
+
+    
+console.log(std.innerHTML);
+}
+
+creatingLists("Jafar");
+creatingLists("Kedi");
+creatingLists("Mohamed");
+creatingLists("Ahmed");
+
+
+let foodList = document.getElementById("food");
+foodList.innerHTML = `
+<li>Pizza</li>
+<li>Burger</li>
+<li>Dorowet</li>
+<li>Shiro</li>
+`
+
+for(let i = 0; i < 5; i++){
+    let div = document.createElement("div");
+    div.innerHTML = `<p>Paragraph ${i}</p>`;
+    document.body.appendChild(div);
+}
