@@ -71,3 +71,28 @@ for(let i = 0; i<blueCompanies.length; i++){
 }
 
  console.log(blueCmp);
+
+
+
+
+ //* Question 3:
+//* Change the background color of the page to light-blue (#99ecff) when clicked on the text that says "Yes". If there is a background color set already, change it to none when clicked on "No".
+
+const yesBackground = ()=>{
+    document.body.style.backgroundColor = "#99ecff";
+}
+const noBackground = ()=>{
+    document.body.style.backgroundColor = "";
+}
+
+
+
+let yesBtn = document.getElementById("yes");
+yesBtn.addEventListener("click", yesBackground);
+
+
+let noBtn = document.getElementById("No");
+noBtn.addEventListener("click", noBackground);
+
+
+
