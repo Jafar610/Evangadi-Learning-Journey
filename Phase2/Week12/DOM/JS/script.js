@@ -99,3 +99,6 @@ for(let i = 0; i < 5; i++){
     div.innerHTML = `<p>Paragraph ${i}</p>`;
     document.body.appendChild(div);
 }
+
+let input2 = document.getElementById("input");
+console.log(input2.attributes);
