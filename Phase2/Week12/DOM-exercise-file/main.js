@@ -71,30 +71,43 @@ const noBackground = () => {
   document.body.style.backgroundColor = "";
 };
 
-let yesBtn = document.getElementById("yes");
+let yesBtn = document.querySelector("#yes");
 yesBtn.addEventListener("click", yesBackground);
 
-let noBtn = document.getElementById("No");
+let noBtn = document.querySelector("#No");
 noBtn.addEventListener("click", noBackground);
 
 //* A form with two text fields is provided under the section which says "For question 4".
 //* Write a JavaScript code which takes the values of the two fields, checks if they are number values and calculate the sum of the two numbers.
 
 // todo: 1. Display the result on the console.
+// todo: 2. Display the result underneath the form.
+// todo: 3. If any of the numbers provided is not a number, display a message that says "Please enter numerical values only" underneath the form
 
-const adder = (event) => {
-  event.preventDefault();
+let fmAdder = document.getElementById("adder");
+ let resultDiv = document.querySelector("#sum");
 
-  let value1 = Number(document.getElementsByName("first-value")[0].value);
-  let value2 = Number(document.getElementsByName("second-value")[0].value);
+const adder = (e) => {
+  e.preventDefault();
 
-  if (isNaN(value1) || isNaN(value2)) {
-    console.log("Enter a valid number.");
+  let value1 = Number(
+    document.getElementsByName("first-value")[0].value.trim(),
+  );
+
+  let value2 = Number(
+    document.getElementsByName("second-value")[0].value.trim(),
+  );
+
+   if (isNaN(value1) || isNaN(value2)) {
+    resultDiv.textContent = 'Please enter numerical values only';
   } else {
-    console.log(value1 + value2);
+    let result = value1 + value2;
+    resultDiv.textContent = `${result}`;
   }
+
 };
 
-let submitBtn = document.getElementById('submitButton');
-submitBtn.addEventListener('click', adder);
+// let submitBtn = document.getElementById('submitButton');
+fmAdder.addEventListener("submit", adder);
+
 
