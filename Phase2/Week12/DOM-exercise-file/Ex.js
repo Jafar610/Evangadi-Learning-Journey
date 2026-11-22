@@ -30,4 +30,36 @@ const changeBg = () => {
   }
 };
 
-radioBtn[0].addEventListener('click', changeBg);
+radioBtn[0].addEventListener("click", changeBg);
+
+let btn = document.querySelector("#btn");
+
+btn.addEventListener("click", (e) => {
+  let p = document.createElement("p");
+  p.textContent = "hello world";
+  document.body.appendChild(p);
+  document.body.append(e.target);
+});
+
+let link = document.querySelector("a");
+
+link.addEventListener("click", function (event) {
+  console.log("clicked");
+  event.preventDefault();
+});
+
+window.addEventListener("scroll", (event) => {
+  console.log("Scrolling...");
+});
+
+
+
+
+const pwd = document.querySelector('input[type="password"]');
+pwd.addEventListener("focus", (e) => {
+  e.target.style.backgroundColor = "yellow";
+});
+
+pwd.addEventListener("blur", (e) => {
+  e.target.style.backgroundColor = "";
+});
