@@ -46,3 +46,15 @@ for(let i = 0; i < blueClass.length; i++){
 
 
 //* Q3
+// A form with two text fields is provided under the section which says "For question 3". Write a jQuery code which takes the values of the two fields, checks if they are number values and calculate the sum and average of the two numbers.
+
+$("form").submit((e)=>{
+    e.preventDefault();
+    let value1 = $("#in1").val().trim();
+    let value2 = $("#in2").val().trim();
+
+
+})
+
+// todo: 3.1. Display the result on the console
+
