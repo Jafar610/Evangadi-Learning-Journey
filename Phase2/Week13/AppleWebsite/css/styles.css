@@ -336,20 +336,24 @@ body {
     position: absolute;
     right: 25px;
 
-    /* transform: rotate(0deg);
-			transition: .3s;   */
+    transform: rotate(0deg);
+			transition: .3s;  
+
   }
+
 
   .footer-links-wrapper h3.expanded:after {
     font-family: "FontAwesome";
-    content: "\0058";
+    /* content: "\0058"; */
+    content: "\f067";
     padding-left: 10px;
     position: absolute;
     right: 25px;
 
-    /* transform: rotate(-180deg);
-    /*transform: rotate(180deg);*/
-    /* transition: .3s; */
+    /* transform: rotate(-180deg); */
+    /* transform: rotate(180deg); */
+     transform: rotate(45deg);
+    transition: .3s ease;
   }
 }
 
