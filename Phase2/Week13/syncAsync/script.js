@@ -71,6 +71,20 @@ promise1.then(function(result){
 })
 
 
+let promise2 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        reject(10)
+    },3000)
+})
+
+promise2.catch(function(result){
+    return result * 2;
+}).catch(function(result){
+    console.log(result);
+})
+.then(function(res){
+    console.log(res);
+})
 
 
 
