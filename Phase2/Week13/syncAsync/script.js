@@ -50,9 +50,11 @@
 //* Promise
 
 // todo: fetch() API
-// fetch("https://api.randomuser.me")
-// .then((res)=> res.json())
-// .then((data)=>console.log(data.results[0]));
+fetch("https://api.randomuser.me")
+.then((res)=> res.json())
+.then((data)=>console.log(data.results[0]))
+.catch((err)=>console.log("Something error happend.", err));
+
 
 
 let promise1 = new Promise(function(resolve, reject){
