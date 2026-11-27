@@ -54,6 +54,24 @@
 // .then((res)=> res.json())
 // .then((data)=>console.log(data.results[0]));
 
+
+let promise1 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        resolve(10);
+    }, 1000)
+})
+
+promise1.then(function(result){
+    return result * 3;
+})
+.then(function(result){
+    console.log(result/2);
+})
+
+
+
+
+
 //* Q1
 
 // function job() {
