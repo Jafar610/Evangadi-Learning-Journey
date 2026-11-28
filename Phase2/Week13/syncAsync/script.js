@@ -16,7 +16,6 @@
 // delay(5);
 // console.log("doing something");
 
-
 //* Async
 // console.log("task1");
 
@@ -25,7 +24,6 @@
 // }, 2000);
 
 // console.log("task3")
-
 
 //* Callback
 
@@ -46,7 +44,6 @@
 // orderPizza(pizzaRead);
 // console.log("call a friend.")
 
-
 //* Promise
 
 // todo: fetch() API
@@ -55,55 +52,47 @@
 // .then((data)=>console.log(data.results[0]))
 // .catch((err)=>console.log("Something error happend.", err));
 
+// let promise1 = new Promise(function (resolve, reject) {
+//   setTimeout(function () {
+//     resolve(10);
+//   }, 1000);
+// });
 
+// promise1
+//   .then(function (result) {
+//     return result * 3;
+//   })
+//   .then(function (result) {
+//     console.log(result / 2);
+//   });
 
-let promise1 = new Promise(function(resolve, reject){
-    setTimeout(function(){
-        resolve(10);
-    }, 1000)
-})
+// let promise2 = new Promise(function (resolve, reject) {
+//   setTimeout(function () {
+//     reject(10);
+//   }, 3000);
+// });
 
-promise1.then(function(result){
-    return result * 3;
-})
-.then(function(result){
-    console.log(result/2);
-})
-
-
-let promise2 = new Promise(function(resolve, reject){
-    setTimeout(function(){
-        reject(10)
-    },3000)
-})
-
-promise2.catch(function(result){
-    return result * 2;
-}).catch(function(result){
-    console.log(result);
-})
-.then(function(res){
-    console.log(res);
-})
-
-
+// promise2
+//   .catch(function (result) {
+//     return result * 2;
+//   })
+//   .catch(function (result) {
+//     console.log(result);
+//   })
+//   .then(function (res) {
+//     console.log(res);
+//   });
 
 //* Q1
 
 // function job() {
 //   return new Promise(function (resolve, reject) {
 //    reject()
-  
+
 //   });
 // }
 
-
-
-
-
 // let promise = job();
-
-
 
 // promise
 //   .then(function () {
@@ -122,7 +111,6 @@ promise2.catch(function(result){
 //     console.log("Success 4");
 //   });
 
-
 //   retun value
 //   return  new Promise(function (resolve, reject) {
 //     resolve(underfined);
@@ -139,7 +127,7 @@ promise2.catch(function(result){
 //   });
 // }
 
-// let promise= job(true);      
+// let promise= job(true);
 
 // promise
 //   .then(function (data) {
@@ -161,13 +149,11 @@ promise2.catch(function(result){
 //     console.log(error);
 //   });
 
-
-
 // * Q3
 function job(state) {
   return new Promise(function (resolve, reject) {
     if (state) {
-resolve("success");
+      resolve("success");
     } else {
       reject("error");
     }
@@ -184,11 +170,10 @@ promise
   .then(function (data) {
     if (data !== "victory") {
       throw "Defeat";
-//   return new Promise(function (resolve, reject) {
-//    reject("Defeat")
-  
-//   });
-      
+      //   return new Promise(function (resolve, reject) {
+      //    reject("Defeat")
+
+      //   });
     }
     return job(true);
   })
@@ -218,17 +203,30 @@ promise
     console.log("Error:", data.message);
   });
 
-
-
 // * async and await
-async function loadDAta(){
-    try {
-        let res = await fetch("https://api.randomuser.me");
+async function loadDAta() {
+  try {
+    let res = await fetch("https://api.randomuser.me");
     let data = await res.json();
     console.log(data.results[0]);
-    } catch (error) {
-        console.log(error);
-    }
+    $("#div").append(`
+       <img src="${data.results[0].picture.large}" alt="">
+        <h4>${data.results[0].name.title} ${data.results[0].name.first} ${data.results[0].name.last}</h4>
+        <h5>Country: ${data.results[0].location.country},  ${data.results[0].location.state}</h5>
+       
+        `)
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 loadDAta();
+
+// * simple qoutes generator project
+$("#btn").on("click", function() {
+  window.location.reload();
+});
+
+
+
+
