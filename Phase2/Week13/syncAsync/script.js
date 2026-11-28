@@ -50,10 +50,10 @@
 //* Promise
 
 // todo: fetch() API
-fetch("https://api.randomuser.me")
-.then((res)=> res.json())
-.then((data)=>console.log(data.results[0]))
-.catch((err)=>console.log("Something error happend.", err));
+// fetch("https://api.randomuser.me")
+// .then((res)=> res.json())
+// .then((data)=>console.log(data.results[0]))
+// .catch((err)=>console.log("Something error happend.", err));
 
 
 
@@ -217,3 +217,18 @@ promise
   .catch(function (data) {
     console.log("Error:", data.message);
   });
+
+
+
+// * async and await
+async function loadDAta(){
+    try {
+        let res = await fetch("https://api.randomuser.me");
+    let data = await res.json();
+    console.log(data.results[0]);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+loadDAta();
